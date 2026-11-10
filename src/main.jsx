@@ -44,15 +44,6 @@ const missions = [
   ["제일 멋진 포즈로 점프!", "⭐"],
 ].map(([text, emoji], index) => ({ id: index + 1, text, emoji }));
 
-const praises = [
-  { emoji: "✨", message: "정말 멋져요!" },
-  { emoji: "🎉", message: "최고예요!" },
-  { emoji: "🌟", message: "아주 잘했어요!" },
-  { emoji: "👏", message: "대단해요!" },
-  { emoji: "🥳", message: "완벽한 점프예요!" },
-  { emoji: "💪", message: "힘이 넘쳐요!" },
-];
-
 function CameraView() {
   const videoRef = useRef(null);
   const streamRef = useRef(null);
@@ -161,8 +152,7 @@ function App() {
   const finishMission = () => {
     if (busy) return;
     setBusy(true);
-    const nextPraise = praises[Math.floor(Math.random() * praises.length)];
-    setPraise(nextPraise);
+    setPraise({ emoji: "✨", message: "미션성공!" });
     window.setTimeout(() => {
       setPraise(null);
       setBusy(false);
