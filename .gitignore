@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.vite/
+*.har
+*.log
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
